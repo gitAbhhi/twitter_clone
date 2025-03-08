@@ -4,6 +4,7 @@ import thirdphoto from '../assets/thirdphoto.jpg'
 import firstphoto from '../assets/firstphoto.png'
 import secondphoto from '../assets/secondphoto.jpeg'
 import fourthphoto from '../assets/fouthphoto.png'
+import content from '../assets/content'
 
 const Section2 = () => {
   return (
@@ -45,153 +46,60 @@ const Section2 = () => {
       </div>
 
       <div className="h-[1px] w-full bg-gray-700"></div>
-      <div className="photo flex">
-        <div className="user_icon w-[50px] flex justify-center p-1.5" >
-          <img className=" rounded-full w-[40px] h-[40px]  object-cover " src={thirdphoto} alt="profile"/>
-        </div>
-        <div className="user_img w-[85%] lg:w-[92%] pr-3 my-1">
-          <div className="user_detail flex justify-start items-center gap-1">
-            <span className=" text-base font-bold fl">IndiaToday</span>
-            <span className="material-symbols-outlined text-xl text-blue-400 ">verified</span>
-            <span className="text-gray-500 ">@IndiaToday·2m</span>
-          </div>
-          <div className="user_detail2 text-wrap">
-            <div className="w-full whitespace-pre-wrap break-words overflow-hidden">JKPC President Sajjad Lone talks about politics, upcoming elections in the Valley and
-              more at
-              <span className=" text-blue-400">#PanchayatAajTakJK#ATLivestream
-                |@sajadlone|@ashraf_wani#PanchayatAajTak</span>
+        {
+          content.map((work,index)=>(
+            <>
+              <div className="photo flex">
+            <div key={work} className="user_icon w-[50px] flex justify-center p-1.5">
+              <img className=" rounded-full w-[40px] h-[40px]  object-cover " src={work.cnt_img} alt="profile" />
             </div>
-            <div className="my-2">
-              <img src={firstphoto} className="border-none  object-cover rounded-2xl" alt="pic"/>
-              <div className="likes flex justify-between my-2 text-gray-500">
-                <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined">mode_comment</span>
-                  <span className="text-sm">345k</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-green-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined  ">Repeat</span>
-                  <span className="text-sm">45</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-pink-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined  ">favorite</span>
-                  <span className="text-sm">35</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined ">bar_chart</span>
-                  <span className="text-sm ">5k</span>
-                </span>
-                <span>
-                  <span
-                    className="text-xl  material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">bookmark</span>
-                  <span
-                    className="text-xl material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">upload</span>
-                </span>
+            <div key={work} className="user_img w-[85%] lg:w-[92%] pr-3 my-1">
+                <div className="user_detail flex justify-start items-center gap-1">
+                  <span className=" text-base font-bold fl">{work.cnt_id}</span>
+                  <span className="material-symbols-outlined text-xl text-blue-400 ">{work.cnt_verify}</span>
+                  <span className="text-gray-500 ">{work.cnt_time}</span>
+                </div>
+                <div className="user_detail2 text-wrap">
+                  <div className="w-full whitespace-pre-wrap break-words overflow-hidden">{work.cnt_txt}
+                    <span className=" text-blue-400">{work.cnt_tag}</span>
+                  </div>
+                  <div className="my-2">
+                    <img src={work.cnt_simg} className="border-none  object-cover rounded-2xl" alt="pic" />
+                    <div className="likes flex justify-between my-2 text-gray-500">
+                      <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
+                        <span className="text-xl material-symbols-outlined">mode_comment</span>
+                        <span className="text-sm">{work.cnt_msg}</span>
+                      </span>
+                      <span className="flex items-center gap-1  hover:text-green-600 hover:bg-gray-900 hover:rounded-full">
+                        <span className="text-xl material-symbols-outlined  ">Repeat</span>
+                        <span className="text-sm">{work.cnt_retweet}</span>
+                      </span>
+                      <span className="flex items-center gap-1  hover:text-pink-600 hover:bg-gray-900 hover:rounded-full">
+                        <span className="text-xl material-symbols-outlined  ">favorite</span>
+                        <span className="text-sm">{work.cnt_like}</span>
+                      </span>
+                      <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
+                        <span className="text-xl material-symbols-outlined ">bar_chart</span>
+                        <span className="text-sm ">{work.cnt_view}</span>
+                      </span>
+                      <span>
+                        <span
+                          className="text-xl  material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">bookmark</span>
+                        <span
+                          className="text-xl material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">upload</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-[1px] w-full bg-gray-700"></div>
-
-      <div className="photo flex">
-        <div className="user_icon w-[50px] flex justify-center p-1.5" >
-          <img className=" rounded-full w-[40px] h-[40px]  object-cover " src={fourthphoto} alt="profile"/>
-        </div>
-        <div className="user_img w-[85%] lg:w-[92%] pr-3 my-1">
-          <div className="user_detail flex justify-start items-center gap-1">
-            <span className=" text-base font-bold fl">IndiaToday</span>
-            <span className="material-symbols-outlined text-xl text-blue-400 ">verified</span>
-            <span className="text-gray-500 ">@IndiaToday·2m</span>
-          </div>
-          <div className="user_detail2 text-wrap">
-            <div className="w-full whitespace-pre-wrap break-words overflow-hidden">JKPC President Sajjad Lone talks about politics, upcoming elections in the Valley and
-              more at
-              <span className=" text-blue-400">#PanchayatAajTakJK#ATLivestream
-                |@sajadlone|@ashraf_wani#PanchayatAajTak</span>
-            </div>
-            <div className="my-2">
-              <img src={secondphoto} className="border-none  object-cover rounded-2xl" alt="pic"/>
-              <div className="likes flex justify-between my-2 text-gray-500">
-                <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined">mode_comment</span>
-                  <span className="text-sm">345k</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-green-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined  ">Repeat</span>
-                  <span className="text-sm">45</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-pink-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined  ">favorite</span>
-                  <span className="text-sm">35</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined ">bar_chart</span>
-                  <span className="text-sm ">5k</span>
-                </span>
-                <span>
-                  <span
-                    className="text-xl  material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">bookmark</span>
-                  <span
-                    className="text-xl material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">upload</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-[1px] w-full bg-gray-700"></div>
-      <div className="photo flex">
-        <div className="user_icon w-[50px] flex justify-center p-1.5" >
-          <img className=" rounded-full w-[40px] h-[40px]  object-cover " src={thirdphoto} alt="profile"/>
-        </div>
-        <div className="user_img w-[85%] lg:w-[92%] pr-3 my-1">
-          <div className="user_detail flex justify-start items-center gap-1">
-            <span className=" text-base font-bold fl">IndiaToday</span>
-            <span className="material-symbols-outlined text-xl text-blue-400 ">verified</span>
-            <span className="text-gray-500 ">@IndiaToday·2m</span>
-          </div>
-          <div className="user_detail2 text-wrap">
-            <div className="w-full whitespace-pre-wrap break-words overflow-hidden">JKPC President Sajjad Lone talks about politics, upcoming elections in the Valley and
-              more at
-              <span className=" text-blue-400">#PanchayatAajTakJK#ATLivestream
-                |@sajadlone|@ashraf_wani#PanchayatAajTak</span>
-            </div>
-            <div className="my-2">
-              <img src={fourthphoto} className="border-none  object-cover rounded-2xl" alt="pic"/>
-              <div className="likes flex justify-between my-2 text-gray-500">
-                <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined">mode_comment</span>
-                  <span className="text-sm">345k</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-green-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined  ">Repeat</span>
-                  <span className="text-sm">45</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-pink-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined  ">favorite</span>
-                  <span className="text-sm">35</span>
-                </span>
-                <span className="flex items-center gap-1  hover:text-blue-600 hover:bg-gray-900 hover:rounded-full">
-                  <span className="text-xl material-symbols-outlined ">bar_chart</span>
-                  <span className="text-sm ">5k</span>
-                </span>
-                <span>
-                  <span
-                    className="text-xl  material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">bookmark</span>
-                  <span
-                    className="text-xl material-symbols-outlined hover:text-blue-600  hover:bg-gray-900 hover:rounded-full">upload</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="h-[1px] w-full bg-gray-700"></div>
+                <div className="h-[1px] w-full bg-gray-700"></div>
+              </>
+          ))
+        }
 
      
-
-     
-
+      <div className="h-[1px] w-full bg-gray-700"></div>
     </div>
   )
 }
